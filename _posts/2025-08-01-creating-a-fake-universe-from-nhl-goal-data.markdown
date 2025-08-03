@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Creating A Fake Universe From NHL Goal Data"
+title:  "I Turned Every Goal Scored In The NHL Since 2023 Into A Star Chart"
 date:   2025-08-03 12:30:00 -0400
 categories: jekyll update
 ---
@@ -20,13 +20,14 @@ Every goal can just be thought of as a vector, where each number in the vector c
 - `y coordinate`
 - `period`
 - `period time`
-- `player id`
-- `team id`
-- `shot type`
-- `goalie id`
 - `team score`
 - `opponent score`
+- `shot type`
 - `game state`
+- `player id`
+- `team id`
+- `goalie id`
+
 
 Now that I had my vector, I had to figure out how to re-create the layers of groupings. The lowest level is always the object that is being compared so I knew my Cities would be the goals themselves. To get to Continents and Countries, I decided to perform multiple layers of clustering. Looking at the variables, each could be sort of grouped into the type of information it was providing about the goal. There were variables giving shot context, game context, and player context. I decided to just go with that 
 - Shot context == Continents
@@ -34,7 +35,7 @@ Now that I had my vector, I had to figure out how to re-create the layers of gro
 - Players Involved == ?
 - Goals == Cities
 
-The player information really didn't fit into an existing "level" from the original idea but I knew I really wanted to include that information because I had it and I thought it would be fun to see if there were any goals scored by the same player/goalie combinations. The geographic metaphor started to break down. I needed a concept with more layers of hierarchy. That's when I thought of astronomy. A universe of galaxies, clusters, and solar systems felt like a much better fit for the different contexts of the data. The vision really started to come together in my head. My newly inspired clusters now looked like:
+The player information really didn't fit into an existing "level" from the original idea but I knew I really wanted to include that information because I had it and I thought it would be fun to see if there were any goals scored by the same player/goalie combinations. With the geographic metaphor starting to break down, I turned towards astronomy. I needed a concept with more layers of hierarchy and astronomy fit that mold really well. A universe of galaxies, clusters, and solar systems felt like a much better fit for the different contexts of the data and conveniently had its own unique way of being visualized in star charts. The vision really started to come together in my head. My newly inspired clusters now looked like:
 - Shot context == Galaxies
 - Game context == Clusters
 - Players Involved == Solar Systems
@@ -65,6 +66,15 @@ Astute readers may have noticed that the initial pass of variables I said I woul
 With all of these changes, I was finally able to get some real results.
 
 I tried many different clustering algorithms including k-means, agglomerative clustering, dbscan, and hdbscan. I found myself having the best results with hdbscan, although once I made the data changes, I think really any of them could have worked. One specific design decision I made was to use the UMAP algorithm as a step prior to clustering in order to further reduce the dimensionality of the data. Even with the changes I made to make my data more discrete, there was a lot of benefit in reducing it further as a pre-processing step. 
+
+I also found that removing `team` from the list of features to be beneficial. There was just a lot of noise there when clustering and reduced the cluster quality I was aiming for.
+
+Once I was happy with the cluster's, I turned toward an LLM to name each celestial object. Here is the prompt that was used
+```
+You are tasked with creating a <celestial level> name for a project which maps all of the goals scored in the NHL into a constellation map. The name should make sense based on the attributes of the goals contained in the cluster and should resemble names used in astronomy for our real universe.
+Please provide only the name (2-3 words maximum), no explanation. The name should be evocative of the goal characteristics and follow astronomical naming conventions. Do not use a name in goalies faced unless a goalie name appears 4 or more times based on the provided context(we are using pandas value_counts() to get the count). For situations, 5v4, 6v4, 5v3, 4v3 are powerplays and 4v5, 4v6, 3v5, 3v4 are shorthanded. 5v6 is on an empty net and 6v5 is scoring with an extra player because your net is empty.
+Some context for the goals in this grouping are: <data context>.
+```
 
 ## Visualizing The Data
 I struggled a lot more than I thought I would with how to visualize this data. I knew I wanted to keep the spirit of the Map of Github and have something I could pan around. 
