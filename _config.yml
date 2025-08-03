@@ -22,7 +22,6 @@ title: Ryan's Roundup
 email: desalvio23@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   A space for blogging about anything fun I am working on
-baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: RyGuyy7
 github_username:  rdesalvio
