@@ -61,11 +61,11 @@ Using team score and opponent score individually created a huge number of possib
 Using period and period_time separately was a mistake. It was easy for clustering algorithms to pick up on the period but the period time was essentially useless. I ended up combining these fields into a single field called `game_time`. This was just a calculation of `(period * 20) + period_time` to give you the amount of time into the game a goal was scored. Of note, this field still contains a lot of potential variations but I did have better results going this route. It could be something potentially improved in the future.
 
 #### IDs
-Astute readers may have noticed that the initial pass of variables I said I would use included `player id` and `goalie id`. I had a huge face palm moment when I realized these fields were contributing to bad cluster results because the IDs mean nothing. 2 players who are one ID apart have nothing in common with each other. I swapped all of the ID fields out for the actual names and ended up using the [Damerau-Levenshtein distance](https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance) between a concatanation of `player_name + goalie_name`. 
+Astute readers may have noticed that the initial pass of variables I said I would use included `player id` and `goalie id`. I had a huge face palm moment when I realized these fields were contributing to bad cluster results because the IDs mean nothing. 2 players who are one ID apart have nothing in common with each other. I swapped all of the ID fields out for the actual names and ended up using the [Damerau-Levenshtein distance](https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance) between a concatanation of `player_name + goalie_name` to build a similarity matrix and then only grouped distances above a certain threshold. 
 
 With all of these changes, I was finally able to get some real results.
 
-I tried many different clustering algorithms including k-means, agglomerative clustering, dbscan, and hdbscan. I found myself having the best results with hdbscan, although once I made the data changes, I think really any of them could have worked. One specific design decision I made was to use the UMAP algorithm as a step prior to clustering in order to further reduce the dimensionality of the data. Even with the changes I made to make my data more discrete, there was a lot of benefit in reducing it further as a pre-processing step. 
+I spent a lot of time talking about the data preparation because the honest truth is the clustering was rather boring. I tried many different clustering algorithms including k-means, agglomerative clustering, dbscan, and hdbscan. I found myself having the best results with hdbscan, although once I made the data changes, I think really any of them could have worked. One specific design decision I made was to use the UMAP algorithm as a step prior to clustering in order to further reduce the dimensionality of the data. Even with the changes I made to make my data more discrete, there was a lot of benefit in reducing it further as a pre-processing step. 
 
 I also found that removing `team` from the list of features to be beneficial. There was just a lot of noise there when clustering and reduced the cluster quality I was aiming for.
 
@@ -91,7 +91,7 @@ Finally, I knew I wanted to create a star chart. I love those fisheye maps of th
 ![NHL Star Chart]({{ site.baseurl }}/images/nhl-star-chart/star-chart.png "NHL Star Chart")
 
 ## Wrapping Up
-All in all, I was very happy with the results. I think the star chart is cool and the constellation creator is both an interesting way to view the data, and at worst just a way to watch clips of goals from certain players. The original UI is still my favorite because there are a lot of fun nuggets to be discovered. There were groupings such as:
+All in all, I was very happy with the results. I think the star chart is cool and the constellation creator is both an interesting way to view the data and, at worst, just a way to watch clips of goals from certain players. The original UI is still my favorite because there are a lot of fun nuggets to be discovered such as:
 - Goals scored from behind the net by players with their first name starting with 'Mat'
 - Slap shots from the left circle given up by Jordan Binnington in close games
 - 6v5 goals given up by Jeremy Swayman
