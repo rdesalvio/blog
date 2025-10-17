@@ -60,6 +60,6 @@ Let's assume that the peak usefulness is at 50 games. Doing this lets us clamp t
 
 ![Value]({{ site.baseurl }}/images/lookback/value.png)
 
-So ~90% of our max value can be attained by just looking at the past 15 games. Conveniently, teams in the NHL play ~1 game every 2 days so this tells us the most predictive time range to look at for how a player has performed over the past **month**.
+So ~90% of our max value can be attained by just looking at the past 15 games. Conveniently, teams in the NHL play ~1 game every 2 days so this tells us the most predictive time range to look at for how a player has performed is over the past **month**.
 
 Thank you for coming on this journey with me and go forth with this information and dominate your fantasy hockey leagues.
