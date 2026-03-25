@@ -6,7 +6,7 @@ categories: jekyll update
 ---
 As AI continues to diffuse throughout the world of software, I have found a ton of joy in it enabling me to explore ideas that I have always had but were just out of reach. I think there is a lot of value in the short term for creating new software that challenges an existing space which benefited from being that zone of "just enough work to be too much to try".
 
-During the fantasy hockey season, I do the same things at the beginning of every week and then on a daily basis. Weekly I will look at what teams have the most games that week and evaluate which players are "hot". Daily I tend to look at which goalies are starting and then do a lighter version of identifying which players are performing well and which teams have the most remaining games. Performing all of these tasks uses different tools. 
+During the fantasy hockey season, I do the same things over and over. Weekly I will look at what teams have the most games that week and evaluate which players are "hot". Daily I tend to look at which goalies are starting and then do a lighter version of identifying which players are performing well and which teams have the most remaining games. Performing all of these tasks uses different tools. 
 
 I've grown tired of switching between the different sites and most of their mobile experiences are bad. They are ad-ridden and hard to navigate. Some are better than others but then I am still forced to maintain multiple tabs and switch between apps constantly. This isn't intended to tear down the work of others, but none of these websites are doing anything difficult. It's a problem I have long felt but haven't really had the desire or will to fix.
 
