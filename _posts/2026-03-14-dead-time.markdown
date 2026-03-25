@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "Dead Time: Evaluating The 2025-2026 NHL Schedule"
+date:   2026-03-24 00:00:00 -0400
+categories: jekyll update
+---
+It's Saturday, December 20th and the NHL season is in mid-swing. There are 13 games on tonight in what is going to be a fun slate. I settle down to watch my favorite team at 7pm EST. The first period wraps up and I eagerly check the scores to see if there are some fun games to switch to. To my surprise and disappointment, all of the games are currently at intermission. On this particular day, 88% of intermission time in the NHL overlapped with other games. This phenomenon of synchronized games leading to overlapping intermissions is what I refer to as "Dead Time".
+
+Dead Time is something I have been noticing more and more. This can be frustrating as a fan both because I would definitely turn on some games just for fun while I wait for my team to come back on, but also because it feels like a missed opportunity to market the league. According to a quick google search, the NHL obtains ~44% of its revenue from ticket sales. Such a large stake in revenue coming from in-person attendance proves the NHL has room to grow its TV product. This bears out in the league's recent experimentation with different TV providers and new marquee events such as the "Frozen Frenzy" where all teams play on the same night. As the NHL searches for new ways to promote markets and stars, I think the answer may lie in delaying the starts of some games by 15-30 minutes. 
+
+There are likely some good reasons why the NHL schedules games the way it does:
+- Starting games at 7pm means they are done by ~9:30pm and people are able to be home at reasonable times
+- The league is mostly east coast based and so there is a larger amount of teams that have to play early
+- Because the league is so gate-driven, messing with a tried and true formula could be risky
+
+However, staggering game starts ensures that there is always a game on TV. The season's schedule has dead time 75% of the nights and there is certainly room for improvement. While getting that game in front of people is a different challenge, it begins by making sure that TV audiences could actually watch it. Having games overlap each other is a recipe to never give people the option. 89 hours of dead time are lost during the season which could be time spent on TV trying to spread influence. Speaking of influence, it also could be a cute way to give some smaller market teams pseudo "national" spotlight by ensuring they are the only team playing while fans are watching. Because intermissions are only ~18 minutes, you only need to delay the starts by 15-30 minutes to see benefit. I wonder how much more this really asks of the fans to start a game at 7:15pm rather than 7pm.
+
+Even small amounts of staggering could be an "easier" scheduling win that could realistically see some immediate benefits. 
+
+![Dead Time]({{ site.baseurl }}/images/deadtime/nhl_dead_time_2025_26.png)
